@@ -1,0 +1,12 @@
+.section-grid.show-all-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .section-grid.show-all-grid {
+    justify-content: center;
+  }
+}

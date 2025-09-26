@@ -1,0 +1,20 @@
+.swiper-button-prev,
+.swiper-button-next {
+  width: 36px;
+  height: 36px;
+  color: #1DB954;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #34c94b;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-wrapper {
+  gap: 16px !important;
+}

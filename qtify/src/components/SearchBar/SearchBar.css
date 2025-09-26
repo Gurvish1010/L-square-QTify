@@ -1,0 +1,81 @@
+.searchbar-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Figma width */
+  margin: 20px auto; /* Centered horizontally */
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  background: white; /* Figma white input */
+  border-radius: 8px;
+  overflow: hidden;
+  height: 36px; /* compact height like Figma */
+}
+
+.searchbar input {
+  flex: 1;
+  padding: 0 12px; /* vertical padding 0, horizontal 12px */
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  height: 100%; /* match parent height */
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* match parent height */
+}
+
+.search-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Dropdown for live suggestions */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  margin-top: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px; /* slightly smaller padding for compact design */
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+  background: #f0f0f0;
+}
+
+.suggestion-item img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.suggestion-item span {
+  font-size: 14px;
+  color: #121212;
+}

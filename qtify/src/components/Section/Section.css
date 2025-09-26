@@ -1,0 +1,44 @@
+.section-container {
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.section-button button,
+.collapse-btn {
+  background: transparent;
+  border: none;
+  color: #34c94b;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.section-content {
+  width: 100%;
+}
+
+.section-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .section-grid {
+    justify-content: center;
+  }
+}
