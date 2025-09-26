@@ -10,14 +10,20 @@ import "./Songs.css";
 
 function Songs() {
   const [songs, setSongs] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState("All");
-
-  const genreTabs = ["All", "Rock", "Pop", "Jazz", "Blues"];
+  const [genres, setGenres] = useState([]);
+  const [selectedGenre, setSelectedGenre] = useState("all");
 
   useEffect(() => {
+    
     axios
       .get("https://qtify-backend.labs.crio.do/songs")
       .then((res) => setSongs(res.data))
+      .catch((err) => console.error(err));
+
+    
+    axios
+      .get("https://qtify-backend.labs.crio.do/genres")
+      .then((res) => setGenres(res.data.data)) 
       .catch((err) => console.error(err));
   }, []);
 
@@ -25,17 +31,15 @@ function Songs() {
     setSelectedGenre(newValue);
   };
 
+  // Filtering logic
   const filteredSongs =
-    selectedGenre === "All"
+    selectedGenre === "all"
       ? songs
-      : songs.filter(
-          (song) =>
-            song.genre?.name &&
-            song.genre.name.toLowerCase().trim() === selectedGenre.toLowerCase()
-        );
+      : songs.filter((song) => song.genre?.key === selectedGenre);
 
   return (
     <Section title="Songs">
+      
       <Tabs
         value={selectedGenre}
         onChange={handleTabChange}
@@ -45,11 +49,15 @@ function Songs() {
         textColor="primary"
         className="songs-tabs"
       >
-        {genreTabs.map((genre) => (
-          <Tab key={genre} label={genre} value={genre} />
+        
+        <Tab key="all" label="All" value="all" />
+        
+        {genres.map((genre) => (
+          <Tab key={genre.key} label={genre.label} value={genre.key} />
         ))}
       </Tabs>
 
+      
       {filteredSongs.length === 0 ? (
         <p style={{ color: "#fff" }}>No songs available for this genre.</p>
       ) : (
@@ -57,6 +65,7 @@ function Songs() {
           items={filteredSongs}
           renderItem={(song) => (
             <Card
+              key={song.id}
               image={song.image}
               title={song.title}
               likes={song.likes}
