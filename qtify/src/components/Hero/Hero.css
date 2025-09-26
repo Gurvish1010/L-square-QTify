@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 80px;
-  background-color: #121212;
+  padding: 40px 80px;
+  background-color: #121212; 
+  color: white;
 }
 
 .hero-text h1 {
