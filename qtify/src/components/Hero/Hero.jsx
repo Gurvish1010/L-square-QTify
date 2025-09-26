@@ -4,7 +4,7 @@ import headphones from "../../assets/hero_headphones.svg";
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" style={{ backgroundColor: "#121212" }}>
       <div className="hero-text">
         <h1>100 Thousand Songs, ad-free</h1>
         <h2>Over thousands of podcast episodes</h2>
