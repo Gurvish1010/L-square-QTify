@@ -19,4 +19,8 @@ function Card({ image, title, follows, likes, type = "album" }) {
   );
 }
 
+
+
+
+
 export default Card;

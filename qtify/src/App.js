@@ -5,15 +5,18 @@ import Navbar from "./components/Navbar/Navbar";
 import TopAlbums from "./components/TopAlbums/TopAlbums";
 import NewAlbums from "./components/NewAlbums/NewAlbums";
 import Songs from "./components/Songs/Songs";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <Hero />
       {/* <SearchBar /> */}
       <TopAlbums />
       <NewAlbums />
       <Songs />
+      
     </div>
   );
 }
